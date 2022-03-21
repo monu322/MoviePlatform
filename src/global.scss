@@ -21,6 +21,7 @@ nav {
 main {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
   /* width: 100vw; */
 }
 
@@ -29,3 +30,17 @@ main section {
   max-width: 1200px;
 }
 
+.btn
+{
+  background: #6ac045;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
+  padding: 7px 15px;
+  transition: all 300ms ease;
+  text-decoration: none;
+  cursor: pointer;
+}

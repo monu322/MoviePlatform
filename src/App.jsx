@@ -1,27 +1,30 @@
 import React, { Component} from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import "./global.css"
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
+import Movie from "./components/movie/movie.component";
+
+import "./global.scss"
 
 /**
- * The starting page for your App
+ * The starting page for your Ap
  */
 
 class App extends Component{
   render(){
     return(
       <>
-        <BrowserRouter>
+        
           <Header />
           <main>
             <section>
                 <Routes>
                   <Route path={"/"} element={<Home />} />
+                  <Route path={"movie/:id"} element={<Movie />}/>                  
                 </Routes>
             </section>
           </main>
-        </BrowserRouter>
+        
       </>
 
     );
