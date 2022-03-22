@@ -7,14 +7,13 @@ import Movie from "./components/movie/movie.component";
 import "./global.scss"
 
 /**
- * The starting page for your Ap
+ * The starting page for your App
  */
 
 class App extends Component{
   render(){
     return(
-      <>
-        
+      <>      
           <Header />
           <main>
             <section>

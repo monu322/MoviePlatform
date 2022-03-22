@@ -30,10 +30,6 @@ export const TopMovies = () => {
       // handle success
       console.log('generes', response.data.genres);
       setGenres(response.data.genres);
-
-
-      
-
     })
     .catch(function (error) {
       // handle error
