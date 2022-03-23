@@ -6,12 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 import './search.styles.scss';
 
-export const Search = () => {
+export const Search = (props) => {
 
     const navigate = useNavigate();
 
     const [genres, setGenres] = useState([]);
     const [results, setResults] = useState([]);
+
+    let query = ''
+
+    if(props.query!=='0')
+    {
+        query = props.query;
+    }
 
     const handleSearch = (e)=>{
         e.preventDefault();
@@ -29,7 +36,9 @@ export const Search = () => {
         console.log(e.target.sort.value)
         console.log(e.target.genre.value)
 
-        navigate(`search/${query}/${e.target.genre.value}/${e.target.rating.value}/${e.target.year.value}/${e.target.sort.value}`, { replace: true });
+        console.log('search url', `search/${query}/${e.target.genre.value}/${e.target.rating.value}/${e.target.year.value}/${e.target.sort.value}`);
+
+        navigate(`/search/${query}/${e.target.genre.value}/${e.target.rating.value}/${e.target.year.value}/${e.target.sort.value}/1`);
 
     }
 
@@ -46,22 +55,19 @@ export const Search = () => {
             console.log(error);
         });
 
-
-        
-
     },[]);
 
 
   return (
     <form onSubmit={(e)=>handleSearch(e)} className="search-form">
         <div className='search-container' style={{display: "grid", gridTemplateColumns: "1fr", rowGap: "10px", columnGap: "15px"}}>
-            <input className="search-field" type="text" name="query"/>
+            <input placeholder="Search movies" className="search-field" type="text" name="query"/>
         </div>
         <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", rowGap: "10px", columnGap: "15px"}}>
             <div className="form-group">
                 <label>Genre </label>
                 <select name="genre">
-                    <option value="horror">All</option>
+                    <option value="all">All</option>
                     {
                         genres.map((item, index)=><option key={item.id} value={item.id}>{item.name}</option>)
                     }
@@ -112,10 +118,7 @@ export const Search = () => {
                 <select defaultValue={"latest"} name="sort">
                     <option value="latest">Latest</option>
                     <option value="oldest">Oldest</option>
-                    <option value="featured">Featured</option>
-                    <option value="year">Year</option>
                     <option value="rating">Rating</option>
-                    <option value="likes">Likes</option>
                     <option value="alphabetical">Alphabetical</option>
                 </select>
             </div>

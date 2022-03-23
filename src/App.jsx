@@ -21,7 +21,7 @@ class App extends Component{
                 <Routes>
                   <Route path={"/"} element={<Home />} />
                   <Route path={"movie/:id"} element={<Movie />}/>
-                  <Route path={"search/:query/:genre/:rating/:year/:sort"} element={<Results />}/>                  
+                  <Route exact path={"search/:query/:genre/:rating/:year/:sort/:page"} element={<Results />}/>                  
                 </Routes>
             </section>
           </main>

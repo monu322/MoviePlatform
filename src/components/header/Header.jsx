@@ -7,10 +7,6 @@ export const Header = () => {
     <header>
       <nav>
         <Link to={`/`}><img src={logo} alt="logo" /></Link>      
-        <form>
-          <input type="text" name="search" placeholder="Search movies"/>
-          <button type="submit">Go</button>
-        </form>
       </nav>
     </header>
   );

@@ -14,10 +14,10 @@ const Card = (props) => {
   const {image, id, name, rating, genres} = props;
   return (
     <div className="card">
-      <div className="card-image" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${image})`}}>
+      <div className="card-image" style={image?{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${image})`}:null}>
         <div className="hover-content">
           <span className="rating-span">{rating}/10</span>
-          <Link className="btn" to={`movie/${id}`}>View Details</Link>
+          <Link className="btn" to={`/movie/${id}`}>View Details</Link>
         </div>
       </div>
       <div className="card-text">

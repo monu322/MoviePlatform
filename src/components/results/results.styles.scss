@@ -1,0 +1,15 @@
+ul.pagination
+{
+    list-style: none;
+
+    li
+    {
+        display: inline;
+        margin: 5px;
+
+        a
+        {
+            text-decoration: none;
+        }
+    }
+}
