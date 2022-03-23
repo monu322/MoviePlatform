@@ -42,7 +42,7 @@ export const TopMovies = () => {
     <>
       <h1>Now playing</h1>
 
-      <div className='cards-container' style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", rowGap: "10px", columnGap: "15px"}}>
+      <div className='cards-container' style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", rowGap: "20px", columnGap: "15px"}}>
         {
             nowPlaying.length>0?(
                 nowPlaying.map((item)=>{

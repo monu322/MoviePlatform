@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
 import Movie from "./components/movie/movie.component";
+import Results from "./components/results/results.components";
 
 import "./global.scss"
 
@@ -19,7 +20,8 @@ class App extends Component{
             <section>
                 <Routes>
                   <Route path={"/"} element={<Home />} />
-                  <Route path={"movie/:id"} element={<Movie />}/>                  
+                  <Route path={"movie/:id"} element={<Movie />}/>
+                  <Route path={"search/:query/:genre/:rating/:year/:sort"} element={<Results />}/>                  
                 </Routes>
             </section>
           </main>
